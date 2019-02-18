@@ -1,0 +1,104 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="Lydia Garrido Muñoz">
+  <title>Práctica 2.2 Lydia Garrido</title>
+  <style>
+    * {
+      background-color: #e6e6ff;
+    }
+
+    h1 {
+      color: #336699;
+      text-align: center;
+      font-size: x-large;
+    }
+
+    .aplica {
+      color: white;
+      font-style: italic;
+      background-color: #336699;
+    }
+
+    .ingenieria.teleco {
+      color: #008080;
+      text-align: right;
+      font-size: medium;
+    }
+
+    .dat {
+      text-decoration: underline;
+      font-size: x-large;
+    }
+
+    .quimica {
+      color: purple;
+      text-align: center;
+      font-size: xx-large;
+    }
+
+    #primero {
+      color: #D87E6B;
+    }
+
+    p#asig-primero {
+      font-size: x-large;
+    }
+
+    div#primero {
+      text-align: center;
+    }
+
+    div #primero {
+      text-decoration: underline;
+    }
+
+    .estudiar,
+    .programar {
+      text-align: center;
+      font-size: x-small;
+      background-color: #336699;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Práctica 2.2 Lydia Garrido Muñoz</h1>
+  <h3>Uso de selectores</h3>
+  <p class=aplica>A este párrafo se le aplica la regla.</p>
+  <p>A este párrafo no se le aplica la regla.</p>
+  <div class="ingenieria teleco">
+    Grado en Ingeniería en Tecnologías de la Telecomunicación
+    <div class="microondas">
+      Microondas no es una asignatura de este grado.
+      <div class="dat">
+        Desarrollo de aplicaciones telemáticas es una asignatura de este grado.
+      </div>
+    </div>
+  </div>
+  <div class="ingenieria industrial">
+    Grado en Ingeniería Industrial
+    <div class="quimica">
+      Química de materiales
+      <div class="programación">
+        Matlab
+      </div>
+    </div>
+  </div>
+  <div>
+    <p>Ingeniería civil<p>
+        <p id="asig-primero">Asignaturas de primero</p>
+  </div>
+  <div id="primero">
+    <p>Sistemas de representación I</p>
+  </div>
+  <p class="estudiar">Para graduarte en unos estudios hace falta estudiar.</p>
+  <p class="programar">En Ingeniería en Tecnologías de Telecomunicación hace falta también practicar la programación.</p>
+  <p class="practicar">Hay que realizar prácticas.</p>
+</body>
+
+</html>

@@ -1,0 +1,316 @@
+Lydia Garrido Muñoz
+lgarrido
+
+Práctica 2.1
+
+1)Ejemplo 1
+
+<body>
+  <h1>Hola, css</h1>
+  <p>Este párrafo no tiene nada de particular<p>
+  <p class=feo>Este parrafo tiene un formato terrible.</p>
+  <div class=inverso>Este aparece con los colores invertidos. </div>
+</body>
+
+·<h1>Hola, css</h1>
+
+ h1 {
+      color: violet;
+      text-align: center;
+      font-size: large;
+    }
+
+Al texto "Hola, css" se le aplican las reglas de estilo de la etiqueta <h1>: color violeta, alineado al centro y la fuente de tamaño large.
+
+·<p>Este párrafo no tiene nada de particular<p>
+
+ p {
+      color: blue;
+      text-align: left;
+      background-color: yellow;
+    }
+
+El primer párrafo, ya que es uno que no pertenece a ninguna clase, va a ser de color azul, alineado a la izquierda y de color amarillo de fondo.
+
+·<p class=feo>Este parrafo tiene un formato terrible.</p>
+
+.feo {
+      color: red;
+      background-color: pink;
+    }
+
+Al segundo párrafo se le van a aplicar las reglas de la clase feo, ya que es la clase a la que pertenece. Todos los elementos de esa clase van a tener color rojo y el fondo rosa.
+
+·<div class=inverso>Este aparece con los colores invertidos. </div>
+
+.inverso {
+      color: white;
+      background-color: black;
+    }
+
+La división "Este aparece con los colores invertidos" pertenece a la clase inverso, cuyas reglas de estilo son el color blanco y el fondo negro.
+
+2)Ejemplo 2
+
+<body>
+  <div class="país españa">
+    1.El país España
+    <div class="castilla-la-mancha">
+      2.La comunidad Castilla la Mancha
+      <div class="toledo">
+        3.La ciudad de Toledo
+      </div>
+      <div class="cuenca">
+        4.La ciudad de Cuenca
+      </div>
+      <div class="albacete">
+        5.La ciudad Albacete
+      </div>
+    </div>
+  </div>
+  <div class="país estados-unidos">
+    6.El país Estados Unidos
+    <div class="ohio">
+      7.El estado de Ohio
+      <div class="toledo">
+        8.La ciudad de Toledo
+      </div>
+    </div>
+  </div>
+</body>
+
+·<div class="país españa">
+    1.El país España
+
+Como no hay ninguna clase .pais.españa, el texto "1.El país España" tiene formato estándar.
+
+·<div class="castilla-la-mancha">
+      2.La comunidad Castilla la Mancha
+
+Como es clase castilla-la-mancha dentro de la clase .pais.españa y esta última no tiene detallado el estilo, se aplica solamente la regla del subrayado de la clase castilla-la-mancha.
+
+·<div class="toledo">
+        3.La ciudad de Toledo
+ </div>
+
+Se le aplica el color rojo de la clase .españa .toledo y al estar la clase toledo dentro de la clase castilla-la-mancha se le aplica también el subrayado. La tercera regla que se le aplica es la de .toledo, .cuenca(se aplica a cualquier elemento de la clase toledo o de la clase cuenca) y por ello está alineado en el centro.
+
+·<div class="cuenca">
+        4.La ciudad de Cuenca
+      </div>
+
+Se le aplica el subrayado de la clase .castilla-la-mancha ya que está dentro de ella y al ser un elemento de la clase cuenca está alineado en el centro.
+
+·<div class="albacete">
+        5.La ciudad Albacete
+      </div>
+
+Como está dentro de la clase castilla-la-mancha y no concuerda con ninguna clase más, se le aplica únicamente el subrayado.
+
+· <div class="país estados-unidos">
+    6.El país Estados Unidos
+
+Al no concordar con ninguna regla de estilo, el texto "6.El país Estados Unidos" tiene formato estándar.
+
+·<div class="ohio">
+      7.El estado de Ohio
+
+Al no concordar con ninguna regla de estilo, el texto "7.El estado de Ohio" tiene formato estándar.
+
+·<div class="toledo">
+        8.La ciudad de Toledo
+</div>
+
+Es de color azul por la regla de estilo .toledo y también está centrado en el centro por la regla de .toledo, .cuenca.
+
+3)Ejemplo 3
+
+<body>
+ <div>
+  <p>Párrafo 1.</p>
+  <p id="alfa">Párrafo 2, llamado alfa. Está dentro de un elemento div, pero no es un elemento div</p>
+  <p>Párrafo 3.</p>
+</div>
+
+  <p>Párrafo 4. No está dentro de elemento div.</p>
+
+</body>
+
+
+·<p>Párrafo 1.</p>
+
+Tiene formato estándar, ya que no se aplica ninguna regla de estilo.
+
+·<p id="alfa">Párrafo 2, llamado alfa. Está dentro de un elemento div, pero no es un elemento div</p>
+
+Establece el color azul para el id alfa. Para los párrafos con id alfa se establece el tamaño de fuente 200%. Como está contenido en un div y tiene id alfa se establece el estilo de fuente italic.
+
+·<p>Párrafo 3.</p>
+
+Como no tiene id alfa no se le aplica ninguna regla de estilo y, por tanto, tiene formato estándar.
+
+·<p>Párrafo 4. No está dentro de elemento div.</p>
+
+Al igual que el anterior, como no tiene id alfa tiene formato estándar.
+
+4)Ejemplo 4
+
+<body>
+  <p>Párrafo 1.</p>
+  <p class="reglamento urjc">Párrafo 2, clases reglamento y urjc.</p>
+  <p class="reglamento ucm">Párrafo 2, clases reglamento y ucm.</p>
+  <p class="matriculacion">Párrafo 3, clase matriculación.</p>
+  <p class="investigacion urjc">Párrafo 4, clases investigacion y urjc.</p>
+  <p class="investigacion uc3m">Párrafo 4, clases investigacion y uc3m.</p>
+</body>
+
+·<p>Párrafo 1.</p>
+
+Tiene formato estándar porque no concuerda con ninguno de los selectores.
+
+·<p class="reglamento urjc">Párrafo 2, clases reglamento y urjc.</p>
+
+Es de color #CB0017 por ser de clase urjc.
+Está subrayado por ser de clase urjc y reglamento.
+Tiene fondo de color ligthblue por el selector .urjc, .reglamento(cualquier elemento de la clase urjc, o de la clase reglamento).
+
+·<p class="reglamento ucm">Párrafo 2, clases reglamento y ucm.</p>
+
+Tiene el fondo de color ligthblue ya que es un elemento de la clase reglamento.
+
+·<p class="matriculacion">Párrafo 3, clase matriculación.</p>
+
+No concuerda con ningún selector, por lo que su formato es estándar.
+
+·<p class="investigacion urjc">Párrafo 4, clases investigacion y urjc.</p>
+
+Por ser un elemento de la clase urjc es de color rojo y tiene el fondo de color lightblue.
+
+·<p class="investigacion uc3m">Párrafo 4, clases investigacion y uc3m.</p>
+
+No concuerda con ningún selector, por lo que su formato es estándar.
+
+Práctica 2.2
+
+<body>
+  <h1>Práctica 2.2 Lydia Garrido Muñoz</h1>
+  <h3>Uso de selectores</h3>
+  <p class=aplica>A este párrafo se le aplica la regla.</p>
+  <p>A este párrafo no se le aplica la regla.</p>
+  <div class="ingenieria teleco">
+    Grado en Ingeniería en Tecnologías de la Telecomunicación
+    <div class="microondas">
+      Microondas no es una asignatura de este grado.
+      <div class="dat">
+        Desarrollo de aplicaciones telemáticas es una asignatura de este grado.
+      </div>
+    </div>
+  </div>
+  <div class="ingenieria industrial">
+    Grado en Ingeniería Industrial
+    <div class="quimica">
+      Química de materiales
+      <div class="programación">
+        Matlab
+      </div>
+    </div>
+  </div>
+  <div>
+    <p>Ingeniería civil<p>
+        <p id="asig-primero">Asignaturas de primero</p>
+  </div>
+  <div id="primero">
+    <p>Sistemas de representación I</p>
+  </div>
+  <p class="estudiar">Para graduarte en unos estudios hace falta estudiar.</p>
+  <p class="programar">En Ingeniería en Tecnologías de Telecomunicación hace falta también practicar la programación.</p>
+  <p class="practicar">Hay que realizar prácticas.</p>
+</body>
+
+El fondo tiene color #e6e6ff porque se le aplica el selector *.
+
+·<h1>Práctica 2.2 Lydia Garrido Muñoz</h1>
+
+Como tiene la etiqueta h1, se le aplican las reglas de estilo: color #336699, alineado en el centro y tamaño de fuente x-large.
+
+·<h3>Uso de selectores</h3>
+
+Como tiene la etiqueta h3 y no se corresponde con ningún selector, el formato es estándar.
+
+·<p class=aplica>A este párrafo se le aplica la regla.</p>
+
+Se le aplican las reglas de estilo del selector .aplica por ser un párrafo de la clase aplica: color blanco, estilo de fuente italic y fondo de color #336699.
+
+·<p>A este párrafo no se le aplica la regla.</p>
+
+Como no concuerda con ningún selector, el formato es estándar.
+
+·<div class="ingenieria teleco">
+    Grado en Ingeniería en Tecnologías de la Telecomunicación
+
+Se le aplican las reglas de estilo del selector .ingenieria.teleco por ser class="ingenieria teleco": color #008080, alineado a la derecha y tamaño de fuente medium.
+
+·<div class="ingenieria teleco">
+    Grado en Ingeniería en Tecnologías de la Telecomunicación
+    <div class="microondas">
+      Microondas no es una asignatura de este grado.
+
+Aunque no haya ningún selector para la clase microondas, como está dentro de un div de la clase ingenieria teleco, se le aplican las reglas de estilo de .ingenieria.teleco.
+
+·<div class="ingenieria teleco">
+    Grado en Ingeniería en Tecnologías de la Telecomunicación
+    <div class="microondas">
+      Microondas no es una asignatura de este grado.
+      <div class="dat">
+        Desarrollo de aplicaciones telemáticas es una asignatura de este grado.
+
+Como es un div de la clase dat se le aplican las reglas de estilo de .dat: subrayado y el tamaño de fuente x-large.
+Está dentro de un div de clase microondas pero no aplica ninguna regla, ya que no hay selector que concuerde con esa clase.
+También está dentro de un div de la clase ingeniería teleco y se le aplican también las reglas de estilo del selector .ingenieria.teleco: color #008080, alineado a la derecha y tamaño de fuente medium.
+
+·<div class="ingenieria industrial">
+    Grado en Ingeniería Industrial
+
+No hay selector para la clase ingenieria industrial, por lo que el formato es estándar.
+
+·<div class="ingenieria industrial">
+    Grado en Ingeniería Industrial
+    <div class="quimica">
+      Química de materiales
+
+Se le aplican las reglas de estilo del selector .quimica: color morado, alineado en el centro y tamaño de fuente xx-large.
+
+·<div class="ingenieria industrial">
+    Grado en Ingeniería Industrial
+    <div class="quimica">
+      Química de materiales
+      <div class="programación">
+        Matlab
+
+No hay selector para la clase programacion pero al estar dentro de un div de la clase quimica se le aplican sus reglas de estilo: color morado, alineado en el centro y tamaño de fuente xx-large.
+
+·<p>Ingeniería civil<p>
+
+Tiene formato estándar porque no se le aplica ningún selector.
+
+·<p id="asig-primero">Asignaturas de primero</p>
+
+Se le aplica el selector p#asig-primero: tamaño de fuente x-large.
+
+·<div id="primero">
+    <p>Sistemas de representación I</p>
+
+Se le aplican las reglas de estilo de los selectores div#primero y #primero: color #D87E6B y alineado en el centro.
+
+·<p class="estudiar">Para graduarte en unos estudios hace falta estudiar.</p>  
+
+Se le aplican las reglas de estilo del selector .estudiar, .programar (cualquier elemento de la clase estudiar o de la clase programar): alineado en el centro, tamaño de fuente x-small y background #336699.
+
+·<p class="programar">En Ingeniería en Tecnologías de Telecomunicación hace falta también practicar la programación.</p>
+
+Se le aplican las reglas de estilo del selector .estudiar, .programar (cualquier elemento de la clase estudiar o de la clase programar): alineado en el centro, tamaño de fuente x-small y background #336699.
+
+·<p class="practicar">Hay que realizar prácticas.</p>
+
+No se le aplica ningún selector, tiene formato estándar.
+

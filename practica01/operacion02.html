@@ -1,0 +1,52 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<title>Práctica 1.3 Lydia Garrido Muñoz</title>
+	<meta charset="utf-8">
+	<meta name="author" content="Lydia Garrido Muñoz">
+</head>
+
+<body>
+	<h1>Práctica 1.3</h1>
+	<h2>Lydia Garrido Muñoz</h2>
+	<h3>¡Bienvenido al Restaurante Alyss!</h3>
+	<h4>Operación: Reservar mesa</h4>
+	<img src="images/fotopostre.jpg" alt="Cupcakes" width="500" height="300"><br>
+	<p>Para reservar una mesa, por favor rellene el siguiente formularios:</p>
+	<form>
+		<fieldset>
+			<legend>
+				<em>Detalles de la reserva</em>
+			</legend>
+			<label for="fecha_reserva">Fecha:</label><br>
+			<input type="date" name="fecha_reserva" id="fecha_reserva"><br><br>
+			<label for="hora_reserva">Hora:</label><br>
+			<input type="time" name="hora_reserva" id="hora_reserva"><br><br>
+			<label for="comensales">Total de comensales:</label><br>
+			<input type="number" name="comensales" id="comensales" min="1" max="20"><br><br>
+			<label for="children">Niños:</label><br>
+			<input type="number" name="children" id="children" min="1" max="19">
+			<label for="trona">/ ¿Necesitan trona?:</label>
+			<select name="trona" id="trona">
+				<option value="si">Sí</option>
+				<option value="no">No</option>
+			</select>
+			<label for="num_tronas">Si ha seleccionado sí, ¿Cuántas?:</label>
+			<input type="number" name="num_tronas" id="num_tronas" min="1" max="19"><br><br>
+			<label for="nombre">Nombre:</label><br>
+			<input type="text" name="nombre" id="nombre"><br><br>
+			<p>Si quiere concretar más detalles, puede escribirlo a continuación y lo tendremos en cuenta:</p>
+			<textarea name="mensaje" rows="10" cols="30">Escribe aquí su mensaje:</textarea>
+			<br><br>
+			<input type="submit" name="enviar" value="Enviar">
+		</fieldset>
+	</form>
+
+
+
+</body>
+
+</html>
