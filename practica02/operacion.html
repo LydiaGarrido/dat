@@ -1,0 +1,193 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<div class="container">
+		<title>Práctica 2.9 Lydia Garrido Muñoz</title>
+		<meta name="author" content="Lydia Garrido Muñoz">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+		<style>
+			body {
+		background-color: #f8f8ee;
+	}
+
+	label {
+		text-align: right;
+	}
+
+	h1, h2, h3, h4 {
+		text-align: center;
+	}
+
+	.foto {
+		margin: 10px auto;
+		display: block;
+	}
+
+	legend {
+		font-style: italic;
+		font-size: xx-large;
+	}
+	
+  </style>
+
+</head>
+
+<body>
+	<h1>Práctica 2.9</h1>
+	<h2>Lydia Garrido Muñoz</h2>
+	<h3>¡Bienvenido al Restaurante Alyss!</h3>
+	<h4>Operación: Comida a domicilio</h4>
+	<img src="images/fotopostre.jpg" class="foto" alt="Cupcakes" width="500" height="300"><br>
+	<p>Para pedir a domicilio, por favor rellene los siguientes formularios:</p>
+	<form>
+		<fieldset>
+			<legend>
+				<em>Entrante</em>
+			</legend>
+			<input type="checkbox" name="aros" id="aros">
+			<label for="aros">Aros de cebolla</label>
+			<label for="cantidad_aros">/ Cantidad:</label>
+			<input type="number" name="cantidad_aros" id="cantidad_aros" min="1" max="25"><br><br>
+			<input type="checkbox" name="fingers" id="fingers">
+			<label for="fingers">Fingers de pollo</label>
+			<label for="cantidad_fingers">/ Cantidad:</label>
+			<input type="number" name="cantidad_fingers" id="cantidad_fingers" min="1" max="25"><br><br>
+			<input type="checkbox" name="nachos" id="nachos">
+			<label for="nachos">Nachos</label>
+			<label for="cantidad_nachos">/ Cantidad:</label>
+			<input type="number" name="cantidad_nachos" id="cantidad_nachos" min="1" max="25"><br><br>
+			<input type="checkbox" name="cesar" id="cesar">
+			<label for="cesar">Ensalada César</label>
+			<label for="cantidad_cesar">/ Cantidad:</label>
+			<input type="number" name="cantidad_cesar" id="cantidad_cesar" min="1" max="25"><br><br>
+			<input type="submit" name="enviar" value="Enviar">
+		</fieldset>
+	</form>
+	<br>
+	<form>
+		<fieldset>
+			<legend>
+				<em>Plato principal</em>
+			</legend>
+			<input type="checkbox" name="hamburguesa" id="hamburguesa">
+			<label for="hamburguesa">Hamburguesa Alyss</label>
+			<label for="cantidad_hamburguesa">/ Cantidad:</label>
+			<input type="number" name="cantidad_hamburguesa" id="cantidad_hamburguesa" min="1" max="25"><br><br>
+			<input type="checkbox" name="lubina" id="lubina">
+			<label for="lubina">Lubina al horno</label>
+			<label for="cantidad_lubina">/ Cantidad:</label>
+			<input type="number" name="cantidad_lubina" id="cantidad_lubina" min="1" max="25"><br><br>
+			<input type="checkbox" name="sandwich" id="sandwich">
+			<label for="sandwich">Sándwich mixto</label>
+			<label for="cantidad_sandwich">/ Cantidad:</label>
+			<input type="number" name="cantidad_sandwich" id="cantidad_sandwich" min="1" max="25"><br><br>
+			<input type="checkbox" name="costillas" id="costillas">
+			<label for="costillas">Costillas barbacoa</label>
+			<label for="cantidad_costillas">/ Cantidad:</label>
+			<input type="number" name="cantidad_costillas" id="cantidad_costillas" min="1" max="25"><br><br>
+			<input type="submit" name="enviar" value="Enviar">
+		</fieldset>
+	</form>
+	<br>
+	<form>
+		<fieldset>
+			<legend>
+				<em>Postre</em>
+			</legend>
+			<input type="checkbox" name="helado" id="helado">
+			<label for="helado">Copa de helado</label>
+			<label for="sabor_helado">/ Sabor:</label>
+			<select name="sabor_helado" id="sabor_helado">
+				<option value="fresa">Fresa</option>
+				<option value="mandarina">Mandarina</option>
+				<option value="chocolate">Chocolate</option>
+				<option value="vainilla">Vainilla</option>
+			</select>
+			<label for="cantidad_helado">/ Cantidad:</label>
+			<input type="number" name="cantidad_helado" id="cantidad_helado" min="1" max="25"><br><br>
+			<input type="checkbox" name="tortitas" id="tortitas">
+			<label for="tortitas">Tortitas</label>
+			<label for="sabor_sirope">/ Sirope:</label>
+			<select name="sabor_sirope" id="sabor_sirope">
+				<option value="fresa">Fresa</option>
+				<option value="chocolate">Chocolate</option>
+				<option value="caramelo">Caramelo</option>
+			</select>
+			<label for="nata">/ Nata:</label>
+			<select name="nata" id="nata">
+				<option value="si">Sí</option>
+				<option value="no">No</option>
+			</select>
+			<label for="cantidad_tortitas">/ Cantidad:</label>
+			<input type="number" name="cantidad_tortitas" id="cantidad_tortitas" min="1" max="25"><br><br>
+			<input type="checkbox" name="fruta" id="fruta">
+			<label for="sandwich">Fruta</label>
+			<label for="tipo_fruta">/ Tipo:</label>
+			<select name="tipo_fruta" id="tipo_fruta">
+				<option value="piña">Piña</option>
+				<option value="naranja">Naranja</option>
+				<option value="sandia">Sandía</option>
+				<option value="platano">Plátano</option>
+			</select>
+			<label for="cantidad_fruta">/ Cantidad:</label>
+			<input type="number" name="cantidad_fruta" id="cantidad_fruta" min="1" max="25"><br><br>
+			<input type="checkbox" name="tarta" id="tarta">
+			<label for="tarta">Tarta Red Velvet</label>
+			<label for="cantidad_tarta">/ Cantidad:</label>
+			<input type="number" name="cantidad_tarta" id="cantidad_tarta" min="1" max="25"><br><br>
+			<input type="submit" name="enviar" value="Enviar">
+		</fieldset>
+	</form>
+	<br>
+	<form>
+		<fieldset>
+			<legend>
+				<em>Método de pago</em>
+			</legend>
+			<input type="radio" name="efectivo" id="efectivo">
+			<label for="efectivo">En efectivo</label><br>
+			<input type="radio" name="tarjeta" id="tarjeta">
+			<label for="tarjeta">Con tarjeta de crédito</label><br>
+			<p>Si has elegido en efectivo:</p>
+			<label for="cambio">¿Necesitas cambio?</label>
+			<select name="cambio" id="cambio">
+				<option value="si">Sí</option>
+				<option value="no">No</option>
+			</select>
+			<label for="cantidad_cambio">Si la respuesta es sí, ¿De cuánto?</label>
+			<select name="cantidad_cambio" id="cantidad_cambio">
+				<option value="diez">10</option>
+				<option value="veinte">20</option>
+				<option value="cincuenta">50</option>
+			</select>
+			<br>
+			<p>Si has elegido con tarjeta de crédito:</p>
+			<label for="titular">Titular de la tarjeta:</label><br>
+			<input type="text" name="titular" id="titular"><br><br>
+			<label for="numero">Número de tarjeta:</label><br>
+			<input type="text" name="numero" id="numero"><br><br>
+			<label for="vencimiento">Fecha de vencimiento:</label><br>
+			<input type="date" name="vencimiento" id="vencimiento"><br><br>
+			<label for="cvv">CVV:</label><br>
+			<input type="text" name="cvv" id="cvv"><br><br>
+			<input type="submit" name="enviar" value="Enviar">
+		</fieldset>
+	</form>
+	<br>
+	<form action="/action_page.html">
+		<p>Si quiere indicar cualquier cosa en la preparación de su pedido, escribalo a continuación y lo tendremos en cuenta:</p>
+		<textarea name="mensaje" rows="10" cols="30">Escribe aquí su mensaje:</textarea>
+		<br><br>
+		<input type="submit" name="enviar" value="Enviar">
+	</form>
+	</div>
+</body>
+
+</html>
