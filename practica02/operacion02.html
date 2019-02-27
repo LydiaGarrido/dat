@@ -50,26 +50,40 @@
 				<legend>
 					<em>Detalles de la reserva</em>
 				</legend>
-				<label for="fecha_reserva">Fecha:</label><br>
-				<input type="date" name="fecha_reserva" id="fecha_reserva"><br><br>
-				<label for="hora_reserva">Hora:</label><br>
-				<input type="time" name="hora_reserva" id="hora_reserva"><br><br>
-				<label for="comensales">Total de comensales:</label><br>
-				<input type="number" name="comensales" id="comensales" min="1" max="20"><br><br>
-				<label for="children">Niños:</label><br>
-				<input type="number" name="children" id="children" min="1" max="19">
-				<label for="trona">/ ¿Necesitan trona?:</label>
+				<div class="form-group">
+					<label for="fecha_reserva">Fecha:</label><br>
+					<input type="date" name="fecha_reserva" class="form-control" id="fecha_reserva">
+				</div>
+				<div class="form-group">
+					<label for="hora_reserva">Hora:</label><br>
+					<input type="time" name="hora_reserva" class="form-control" id="hora_reserva">
+				</div>
+				<div class="form-group">
+					<label for="comensales">Total de comensales:</label><br>
+					<input type="number" name="comensales" class="form-control" id="comensales" min="1" max="20">
+				</div>
+				<div class="form-group">
+					<label for="children">Niños:</label><br>
+					<input type="number" name="children" class="form-control" id="children" min="1" max="19"><br>
+				</div>
+				<label for="trona">¿Necesitan trona?:</label>
 				<select name="trona" id="trona">
 					<option value="si">Sí</option>
 					<option value="no">No</option>
 				</select>
 				<label for="num_tronas">Si ha seleccionado sí, ¿Cuántas?:</label>
-				<input type="number" name="num_tronas" id="num_tronas" min="1" max="19"><br><br>
-				<label for="nombre">Nombre:</label><br>
-				<input type="text" name="nombre" id="nombre"><br><br>
+				<div class="form-group">
+					<input type="number" name="num_tronas" class="form-control" id="num_tronas" min="1" max="19">
+				</div>
+				<div class="form-group">
+					<label for="nombre">Nombre:</label><br>
+					<input type="text" name="nombre" class="form-control" id="nombre">
+				</div>
 				<p>Si quiere concretar más detalles, puede escribirlo a continuación y lo tendremos en cuenta:</p>
-				<textarea name="mensaje" rows="10" cols="30">Escribe aquí su mensaje:</textarea>
-				<br><br>
+				<div class="form-group">
+					<textarea name="mensaje" rows="10" cols="30" class="form-control">Escribe aquí su mensaje:</textarea>
+					<br>
+				</div>
 				<input type="submit" name="enviar" value="Enviar">
 			</fieldset>
 		</form>

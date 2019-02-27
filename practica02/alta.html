@@ -4,155 +4,156 @@
 <html lang="es-ES">
 
 <head>
-  <title>Práctica 2.9 Lydia Garrido Muñoz</title>
-  <meta name="author" content="Lydia Garrido Muñoz">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-  <style>
+	<title>Práctica 2.9 Lydia Garrido Muñoz</title>
+	<meta name="author" content="Lydia Garrido Muñoz">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
 
-    body {
-      background-color: #f0f0ef;
-    }
+		body {
+			background-color: #f0f0ef;
+		}
 
-    label {
-      text-align: right;
-    }
+		label {
+			text-align: right;
+		}
 
-    h1, h2, h3 {
-      text-align: center;
-    }
+		h1, h2, h3 {
+			text-align: center;
+		}
 
-    .foto {
+		.foto {
 			margin: 10px auto;
 			display: block;
 		}
 
-    legend {
-      font-style: italic;
-      font-size: xx-large;
-    }
+		legend {
+			font-style: italic;
+			font-size: xx-large;
+		}
 
-  </style>
+	</style>
 
 </head>
 
 <body>
-  <div class="container">
-    <h1>Práctica 2.9</h1>
-    <h2>Lydia Garrido Muñoz</h2>
-    <h3>¡Bienvenido al Restaurante Alyss!</h3>
-    <img src="images/fotopostre.jpg" class="foto" alt="Cupcakes" width="500" height="300"><br>
-    <p>Estimado cliente, para formar parte de nuestra comunidad es necesario que se registre rellenando el siguiente formulario:</p>
-    <form>
-      <fieldset>
-        <legend>
-          Datos personales
-        </legend>
-        <label for="sexo">Sexo:</label><br>
-        <select name="sexo" id="sexo">
-          <option value="femenino">Femenino</option>
-          <option value="masculino">Masculino</option>
-        </select>
-        <br><br>
-        <div class="form-group">
-          <label for="nombre">Nombre:</label><br>
-          <input type="text" name="nombre" class="form-control" id="nombre">
-        </div>
-        <div class="form-group">
-          <label for="apellidos">Apellidos:</label><br>
-          <input type="text" name="apellidos" class="form-control" id="apellidos">
-        </div>
-        <div class="form-group">
-          <label for="nacimiento">Fecha de nacimiento:</label><br>
-          <input type="date" name="nacimiento" id="nacimiento">
-        </div>
-        <div class="form-group">
-          <label for="pais">País:</label><br>
-          <input type="text" name="pais" class="form-control" id="pais" value="España"><br>
-        </div>
-        <input type="submit" name="enviar" value="Enviar">
-      </fieldset>
-    </form>
+	<div class="container">
+		<h1>Práctica 2.9</h1>
+		<h2>Lydia Garrido Muñoz</h2>
+		<h3>¡Bienvenido al Restaurante Alyss!</h3>
+		<img src="images/fotopostre.jpg" class="foto" alt="Cupcakes" width="500" height="300"><br>
+		<p>Estimado cliente, para formar parte de nuestra comunidad es necesario que se registre rellenando el siguiente formulario:</p>
+		<form>
+			<fieldset>
+				<legend>
+					Datos personales
+				</legend>
+				<label for="sexo">Sexo:</label><br>
+				<select name="sexo" id="sexo">
+					<option value="femenino">Femenino</option>
+					<option value="masculino">Masculino</option>
+				</select>
+				<br><br>
+				<div class="form-group">
+					<label for="nombre">Nombre:</label><br>
+					<input type="text" name="nombre" class="form-control" id="nombre">
+				</div>
+				<div class="form-group">
+					<label for="apellidos">Apellidos:</label><br>
+					<input type="text" name="apellidos" class="form-control" id="apellidos">
+				</div>
+				<div class="form-group">
+					<label for="nacimiento">Fecha de nacimiento:</label><br>
+					<input type="date" name="nacimiento" id="nacimiento">
+				</div>
+				<div class="form-group">
+					<label for="pais">País:</label><br>
+					<input type="text" name="pais" class="form-control" id="pais" value="España"><br>
+				</div>
+				<input type="submit" name="enviar" value="Enviar">
+			</fieldset>
+		</form>
 
-    <br>
+		<br>
 
-    <form>
-      <fieldset>
-        <legend>
-          Dirección
-        </legend>
-        <div class="form-group">
-          <label for="calle">Calle:</label><br>
-          <input type="text" name="calle" class="form-control" id="calle">
-        </div>
-        <div class="form-group">
-          <label for="numero">Número:</label><br>
-          <input type="number" name="numero" class="form-control" id="numero" min="1" max="1000">
-        </div>
-        <div class="form-group">
-          <label for="puerta">Puerta:</label><br>
-          <input type="text" name="puerta" class="form-control" id="puerta">
-        </div>
-        <div class="form-group">
-          <label for="postal">CP:</label><br>
-          <input type="text" name="postal" class="form-control" id="postal">
-        </div>
-        <div class="form-group">
-          <label for="ciudad">Ciudad:</label><br>
-          <input type="text" name="ciudad" class="form-control" id="ciudad">
-        </div>
-        <div class="form-group">
-          <label for="provincia">Provincia:</label><br>
-          <input type="text" name="provincia" class="form-control" id="provincia"><br>
-        </div>
-        <input type="submit" name="enviar" value="Enviar">
-      </fieldset>
-    </form>
+		<form>
+			<fieldset>
+				<legend>
+					Dirección
+				</legend>
+				<div class="form-group">
+					<label for="calle">Calle:</label><br>
+					<input type="text" name="calle" class="form-control" id="calle">
+				</div>
+				<div class="form-group">
+					<label for="numero">Número:</label><br>
+					<input type="number" name="numero" class="form-control" id="numero" min="1" max="1000">
+				</div>
+				<div class="form-group">
+					<label for="puerta">Puerta:</label><br>
+					<input type="text" name="puerta" class="form-control" id="puerta">
+				</div>
+				<div class="form-group">
+					<label for="postal">CP:</label><br>
+					<input type="text" name="postal" class="form-control" id="postal">
+				</div>
+				<div class="form-group">
+					<label for="ciudad">Ciudad:</label><br>
+					<input type="text" name="ciudad" class="form-control" id="ciudad">
+				</div>
+				<div class="form-group">
+					<label for="provincia">Provincia:</label><br>
+					<input type="text" name="provincia" class="form-control" id="provincia"><br>
+				</div>
+				<input type="submit" name="enviar" value="Enviar">
+			</fieldset>
+		</form>
 
-    <br>
+		<br>
 
-    <form>
-      <fieldset>
-        <legend>
-          Información alimetaria
-        </legend>
-        <input type="radio" name="alergia" value="huevo" checked>Alergía al huevo<br>
-        <input type="radio" name="alergia" value="pescadoymarisco">Alergía al pescado o marisco<br>
-        <input type="radio" name="alergia" value="fructosa">Intolerante a la fructosa<br>
-        <input type="radio" name="alergia" value="lactosa">Intolerante a la lactosa<br>
-        <input type="radio" name="alergia" value="gluten">Intolerante al gluten<br>
-        <input type="radio" name="alergia" value="otro">Otro<br>
-        <br>
-        <textarea name="mensaje" rows="10" cols="30">Si ha marcado otro, por favor indique cuál/es:</textarea>
-        <br><br>
-        <input type="submit" name="enviar" value="Enviar">
-      </fieldset>
-    </form>
+		<form>
+			<fieldset>
+				<legend>
+					Información alimetaria
+				</legend>
+				<input type="radio" name="alergia" value="huevo" checked>Alergía al huevo<br>
+				<input type="radio" name="alergia" value="pescadoymarisco">Alergía al pescado o marisco<br>
+				<input type="radio" name="alergia" value="fructosa">Intolerante a la fructosa<br>
+				<input type="radio" name="alergia" value="lactosa">Intolerante a la lactosa<br>
+				<input type="radio" name="alergia" value="gluten">Intolerante al gluten<br>
+				<input type="radio" name="alergia" value="otro">Otro<br>
+				<br>
+				<div class="form-group">
+					<textarea name="mensaje" rows="10" cols="30" class="form-control">Si ha marcado otro, por favor indique cuál/es:</textarea>
+				</div>
+				<input type="submit" name="enviar" value="Enviar">
+			</fieldset>
+		</form>
 
-    <br>
+		<br>
 
-    <form action="/action_page.html">
-      <div class="form-group">
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" name="usuario" class="form-control" id="usuario">
-      </div>
-      <div class="form-group">
-        <label for="contrasenya">Contraseña:</label><br>
-        <input type="password" name="contrasenya" class="form-control" id="contrasenya">
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label><br>
-        <input type="email" name="email" class="form-control" id="email">
-      </div>
-      <input type="checkbox" name="terminos" value="si">He leído y acepto los términos y condiciones<br>
-      <input type="checkbox" name="suscripcion" value="si">Deseo subscribirme a la newsletter<br>
-      <br>
-      <input type="submit" name="enviar" value="Enviar">
-    </form>
-  </div>
+		<form action="/action_page.html">
+			<div class="form-group">
+				<label for="usuario">Usuario:</label><br>
+				<input type="text" name="usuario" class="form-control" id="usuario">
+			</div>
+			<div class="form-group">
+				<label for="contrasenya">Contraseña:</label><br>
+				<input type="password" name="contrasenya" class="form-control" id="contrasenya">
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label><br>
+				<input type="email" name="email" class="form-control" id="email">
+			</div>
+			<input type="checkbox" name="terminos" value="si">He leído y acepto los términos y condiciones<br>
+			<input type="checkbox" name="suscripcion" value="si">Deseo subscribirme a la newsletter<br>
+			<br>
+			<input type="submit" name="enviar" value="Enviar">
+		</form>
+	</div>
 </body>
 
 </html>
