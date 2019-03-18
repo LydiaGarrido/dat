@@ -44,6 +44,7 @@ function check_password(pw, longitud, min_minus, min_mayus, min_num, min_char, c
 }
 
 function main(){
+
   let pw = '1234aB+?,]}';
   let longitud = 11;
   let min_minus = 1;
@@ -51,7 +52,34 @@ function main(){
   let min_num = 1;
   let min_char = 1;
   let cadena = '.-{}[]!"·$%&/()=?¿¡';
-  console.log(check_password(pw, longitud, min_minus, min_mayus, min_num, min_char, cadena));
+
+  if (typeof pw != 'string'){
+    return console.log("Error: la contraseña tiene que ser una cadena");
+  }else if (typeof longitud != 'number'){
+    return console.log("Error: la longitud tiene que ser un número");
+  }else if (Math.sign(longitud) == -1){
+    return console.log("Error: la longitud no puede ser negativa");
+  }else if (typeof min_minus != 'number'){
+    return console.log("Error: el número mínimo de minúsculas tiene que ser un número");
+  }else if (Math.sign(min_minus) == -1){
+    return console.log("Error: el número mímino de minúsculas no puede ser negativa");
+  }else if (typeof min_mayus != 'number'){
+    return console.log("Error: el número mínimo de mayúsculas tiene que ser un número");
+  }else if (Math.sign(min_mayus) == -1){
+    return console.log("Error: el número mímino de mayúsculas no puede ser negativa");
+  }else if (typeof min_num != 'number'){
+    return console.log("Error: el número mínimo de números tiene que ser un número");
+  }else if (Math.sign(min_num) == -1){
+    return console.log("Error: el número mímino de números no puede ser negativa");
+  }else if (typeof min_char != 'number'){
+    return console.log("Error: el número mínimo de cáracteres especiales tiene que ser un número");
+  }else if (Math.sign(min_char) == -1){
+    return console.log("Error: el número mímino de cáracteres especiales no puede ser negativa");
+  }else if (typeof cadena != 'string'){
+    return console.log("Error: La cadena de cáracteres especiales permitidos tiene que ser una cadena");
+  }else{
+    console.log(check_password(pw, longitud, min_minus, min_mayus, min_num, min_char, cadena));
+  }
 }
 
 main();
