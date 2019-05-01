@@ -3,3 +3,60 @@ lgarrido
 
 Práctica 1.2 W3C Validator
 
+·https://www.amazon.es/
+
+1.Attribute value not allowed on element meta at this point.
+4381262">↩<meta name="twitter:card" value="summary">↩<meta
+
+Como el error es debido a la utilización del atributo "value", lo arreglaría utilizando el atributo "content" que sí está permitido.
+
+2.Bad value 200px for attribute height on element img: Expected a digit but saw p instead.
+
+El error es debido a que no reconoce 'px', por lo que se arreglaría poniendo 200 sin px.
+
+3.Element img is missing required attribute src.
+ref: url"><img id="quicklook-product-image" class="product-image" data-bind="attr: image, attr: flingData" /></a>↩ 
+
+El error es debido a que no hay atribito src en el elemento img. Se arreglaría añadiendole el atributo src.
+
+·https://www.fnac.es/
+
+4.Bad value https://www.fnac.es/Star-Wars/s69213#int=S:NonApplicable|Home Géné|69213|NonApplicable|BL2|L1 for attribute href on element a: Illegal character in fragment: | is not allowed.
+<a href="https://www.fnac.es/Star-Wars/s69213#int=S:NonApplicable|Home Géné|69213|NonApplicable|BL2|L1">↩
+
+No está permitido el carácter "|" en href, por lo que si se quitara este carácter se solventaría el error.
+
+
+5.Element br not allowed as child of element ul in this context. (Suppressing further errors from this subtree.)
+  <br />↩↩    
+
+El elemento <br> en el contexto en el que está, no está permitido dentro de ul, por lo que se debería quitar.
+
+·https://www.larazon.es/
+
+6.Bad value for attribute id on element div: An ID must not be the empty string.
+ <div id="" class="portlet-boundary portlet-static-end htmlcontainer-portlet"> <div>
+
+No se puede dejar el atributo "id" vacío.
+
+7.An img element must have an alt attribute, except under certain conditions.
+<img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=325580604541685&amp;ev=PageView&amp;noscript=1">
+
+Falta el atributo "alt", que es necesario para el elemento "img".
+
+8.Duplicate ID.
+<div id="" class="portlet-boundary portlet-static-end htmlcontainer-portlet"> <div>
+
+Debido al error del punto 6 se ocasiona error de ID duplicado, ya que hay varios "id" vacíos.
+
+9.Quote " in attribute name. Probable cause: Matching quote missing somewhere earlier.
+io del " procés""> <span class
+
+Error provocado por comillas duplicadas.
+
+10.The sizes attribute may be specified only if the srcset attribute is also present.
+<img itercontenttypein="TeaserImage" itercontenttypeout="Image" src="//estaticos2.larazon.es/placeho…18387_9741418_20190501120316.jpg 300w" class="lazyload" style="bottom: 0; left: 0; top: 0; right: 0;↩height: auto; width: auto;↩max-height: 100%; max-width: 100%;↩display: block; position: absolute; margin: auto;" iterimgid="9741418" sizes="(min-
+
+Si se pone el atributo "sizes" también se debe poner el atributo "srcset".
+
+
