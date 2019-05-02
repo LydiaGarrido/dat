@@ -1,0 +1,39 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Lydia Garrido Muñoz">
+	<title>Práctica 4.3</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style>
+		.oculto {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<button class="btn btn-info" id="boton01">Ver foto</button>
+	<div id="marco_foto" class="oculto">
+		<img src="images/cebra.jpg" alt="Foto de prueba">
+	</div>
+	<script>
+		$(document).ready(function() {
+			$("#boton01").click(function() {
+				$("#marco_foto").toggleClass("oculto");
+				if ($("#marco_foto").hasClass("oculto")) {
+					$("#boton01").text("Ver foto");
+				} else {
+					$("#boton01").text("Ocultar foto");
+				}
+			});
+		});
+	</script>
+</body>
+
+</html>
