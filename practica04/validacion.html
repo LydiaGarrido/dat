@@ -1,0 +1,51 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="author" content="Lydia Garrido Muñoz">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Práctica 4.5 Lydia Garrido</title>
+	<script src="js/js03.js"></script>
+</head>
+
+<body>
+	<form action="/action_page.html">
+		<label for="password1">Introduzca la contraseña:</label>
+		<br>
+		<input type="password1" name="password1" id="password1">
+		<div id="valid1"></div>
+		<br>
+		<label for="password2">Introduzca la contraseña:</label>
+		<br>
+		<input type="password2" name="password2" id="password2">
+		<div id="valid2"></div>
+		<br>
+		<input type="submit" name="enviar" value="Enviar">
+	</form>
+	<script>
+		$(document).ready(function(){
+			$("#password1").on("change keyup paste mouseup", function() {
+				if (check_password($("#password1").val(), longitud = 11, min_minus = 1, min_mayus = 1, min_num = 1,
+			 	min_char = 1, cadena = '.-{}[]!"·$%&/()=?¿¡') == 'ok'){
+					$("#valid1").text("Contraseña válida.");
+				} else {
+					$("#valid1").text("Contraseña no válida.");
+				}
+			});
+			$("#password1").on("change keyup paste mouseup", function() {
+				if ($("#password1").val() == $("#password2").val()){
+					$("#valid2").text("Las contraseñas coinciden.");
+				} else {
+					$("#valid2").text("Las contraseñas no coinciden. Vuelva a intentarlo.");
+				}
+			});
+		});
+	</script>
+</body>
+</html>
