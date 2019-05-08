@@ -1,3 +1,6 @@
+/* Lydia Garrido Muñoz
+login: lgarrido */
+
 'use strict'
 
 import * as vjcanvas from "./vjcanvas.js"

@@ -1,3 +1,5 @@
+/* Lydia Garrido Muñoz
+login: lgarrido */
 
 export function text_eje(texto, x, y){
 

@@ -1,3 +1,6 @@
+/* Lydia Garrido Muñoz
+login: lgarrido */
+
 'use strict'
 
 let personaLydia = new Object();
