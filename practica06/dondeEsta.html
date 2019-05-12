@@ -1,0 +1,100 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Práctica 6.4 Lydia Garrido</title>
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin="" />
+	<script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style>
+		#id_mapa {
+			height: 400px;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="id_mapa"></div>
+	<button id="recordarPosicion" class="btn btn-info">Recordar Posición</button>
+	<button id="borrarPosicion" class="btn btn-danger">Borrar Posición</button>
+	<script>
+		$(document).ready(function() {
+			let options = {
+				enableHighAccuracy: true,
+				maximumAge: 0,
+			};
+
+			var marcadorCoche;
+
+			function success(pos) {
+				var iconPersona = L.icon({
+					iconUrl: 'images/pin.png',
+					iconSize: [40, 50],
+					popupAnchor: [0, -25]
+				});
+
+				var iconCoche = L.icon({
+					iconUrl: 'images/coche.png',
+					iconSize: [40, 30],
+					popupAnchor: [0, -25]
+				});
+
+				let x = pos.coords;
+				let latitud = x.latitude;
+				let longitud = x.longitude;
+
+				let zoom = 16;
+				let mi_mapa = L.map('id_mapa').setView([latitud, longitud], zoom);
+				L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+					attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
+				}).addTo(mi_mapa);
+
+				let posicionActual = [latitud, longitud];
+				let miMarcador = L.marker(posicionActual, {
+					icon: iconPersona
+				}).addTo(mi_mapa);
+				miMarcador.bindPopup("Posicion actual").openPopup();
+
+				let latitud_coche = localStorage.getItem("latitud");
+				let longitud_coche = localStorage.getItem("longitud");
+				if (latitud_coche != undefined && longitud_coche != undefined) {
+					let posicion_coche = [latitud_coche, longitud_coche];
+					marcadorCoche = L.marker(posicion_coche, {
+						icon: iconCoche
+					}).addTo(mi_mapa);
+					marcadorCoche.bindPopup("Posicion coche").openPopup();
+				}
+
+				$("#recordarPosicion").click(function() {
+					let posicion_coche = [latitud, longitud];
+					localStorage.setItem('latitud', latitud);
+					localStorage.setItem('longitud', longitud);
+					marcadorCoche = L.marker(posicion_coche, {
+						icon: iconCoche
+					}).addTo(mi_mapa);
+					marcadorCoche.bindPopup("Posicion coche").openPopup();
+				});
+
+				$("#borrarPosicion").click(function() {
+					localStorage.clear();
+					mi_mapa.removeLayer(marcadorCoche);
+				});
+			}
+
+			function error(err) {
+				console.warn('ERROR(${err.code}): ${err.message}');
+			};
+
+			navigator.geolocation.getCurrentPosition(success, error, options);
+		});
+	</script>
+	<div>Icons made by <a href="https://www.flaticon.es/autores/vectors-market" title="Vectors Market">Vectors Market</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/"
+		 title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+</body>
+
+</html>
