@@ -105,6 +105,21 @@ function marcha(x, crono, resultado) {
 	return resultado;
 }
 
+function newCrono(){
+	let crono = {};
+	crono.initial_time = 0;
+	crono.state = 0;
+	crono.final_time = 0;
+	return crono;
+}
+
+function newResultado(){
+	let resultado = {};
+	resultado.display = '00:00:00:00';
+	resultado.partials = [];
+	return resultado;
+}
+
 function testCrono() {
 
 	let crono = {
@@ -144,4 +159,4 @@ function testCrono() {
 	console.log(acepta_tecla('s', crono, resultado));
 }
 
-testCrono();
+//testCrono();

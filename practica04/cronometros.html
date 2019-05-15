@@ -1,0 +1,107 @@
+<!-- Lydia Garrido Muñoz. lgarrido -->
+
+<!DOCTYPE html>
+<html lang="es-ES">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+	<meta name="author" content="Lydia Garrido Muñoz">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<title>Práctica 4.7 Lydia Garrido</title>
+	<script src="js/crono.js"></script>
+	<style>
+		table {
+			text-align: center;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		#crono1 {
+			float: left;
+		}
+
+		#crono2 {
+			float: right;
+		}
+
+
+	</style>
+</head>
+
+<body>
+	<div id="crono1">
+		<div><h1 id="cuenta1">00:00:00:00<h1></div>
+		<div id="buttons1">
+			<button class="btn btn-success" id="botonstartstop1" type="button">Start/Stop</button>
+			<button class="btn btn-primary" id="botonpartial1" type="button">Partial</button>
+			<button class="btn btn-danger" id="botonreset1" type="button">Reset</button>
+		</div>
+		<table align="left" id="tablacuentas1"></table>
+	</div>
+	<div id="crono2">
+		<div><h1 id="cuenta2">00:00:00:00<h1></div>
+		<div id="buttons2">
+			<button class="btn btn-success" id="botonstartstop2" type="button">Start/Stop</button>
+			<button class="btn btn-primary" id="botonpartial2" type="button">Partial</button>
+			<button class="btn btn-danger" id="botonreset2" type="button">Reset</button>
+		</div>
+		<table align="right" id="tablacuentas2"></table>
+	</div>
+	<script>
+		$(document).ready(function() {
+			let crono1 = newCrono();
+			let resultado1 = newResultado();
+			let crono2 = newCrono();
+			let resultado2 = newResultado();
+			$("#botonstartstop1").click(function() {
+				resultado1 = acepta_tecla("s", crono1, resultado1);
+				$("#cuenta1").text(resultado1.display);
+			});
+
+			$("#botonreset1").click(function() {
+				resultado1 = acepta_tecla("r", crono1, resultado1);
+				$("#cuenta1").text(resultado1.display);
+				$("#tablacuentas1").text(resultado1.partials);
+			});
+
+			$("#botonpartial1").click(function() {
+				resultado1 = acepta_tecla("p", crono1, resultado1);
+				$("#cuenta1").text(resultado1.display);
+				$("#tablacuentas1").text([]);
+				for (let i = 0; i < resultado1.partials.length; i++){
+					let texto;
+					texto = '<tr><td>' + resultado1.partials[i] + '</td>></tr>';
+					$("#tablacuentas1").append(texto);
+				}
+			});
+			$("#botonstartstop2").click(function() {
+				resultado2 = acepta_tecla("s", crono2, resultado2);
+				$("#cuenta2").text(resultado2.display);
+			});
+
+			$("#botonreset2").click(function() {
+				resultado2 = acepta_tecla("r", crono2, resultado2);
+				$("#cuenta2").text(resultado2.display);
+				$("#tablacuentas2").text(resultado2.partials);
+			});
+
+			$("#botonpartial2").click(function() {
+				resultado2 = acepta_tecla("p", crono2, resultado2);
+				$("#cuenta2").text(resultado2.display);
+				$("#tablacuentas2").text([]);
+				for (let i = 0; i < resultado2.partials.length; i++){
+					let texto;
+					texto = '<tr><td>' + resultado2.partials[i] + '</td>></tr>';
+					$("#tablacuentas2").append(texto);
+				}
+			});
+		});
+	</script>
+
+</body>
+</html>
