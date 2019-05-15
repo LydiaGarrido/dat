@@ -178,8 +178,47 @@
 	<section class="content-section bg-light" id="about">
 		<div class="container text-center">
 			<h2 class="mb-4">Vídeos para inspirarte</h2>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/-Dg0DY2JeIY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/Pcd3DvKzNtk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div id="mi_reproductor1"></div>
+			<div id="mi_reproductor2"></div>
+			<script>
+				'use strict'
+				// Carga asíncrona del API del IFrame Player de YouTube
+				let tag = document.createElement('script');
+
+				tag.src = "https://www.youtube.com/iframe_api";
+				let firstScriptTag = document.getElementsByTagName('script')[0];
+				firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+				// Creación de un iframe, con reproductor de YouTube
+				let player;
+				let player2;
+
+				function onYouTubeIframeAPIReady() {
+					player = new YT.Player('mi_reproductor1', {
+						height: '400',
+						width: '500',
+						videoId: '-Dg0DY2JeIY',
+						events: {
+							'onReady': onPlayerReady,
+						}
+					});
+
+					player2 = new YT.Player('mi_reproductor2', {
+						height: '400',
+						width: '500',
+						videoId: 'Pcd3DvKzNtk',
+						events: {
+							'onReady': onPlayerReady,
+						}
+					});
+
+				}
+
+				// El API llama a esta función cuando el reproductor esté listo
+				function onPlayerReady(event) {
+					event.target.playVideo();
+				}
+			</script>
 		</div>
 	</section>
 	<!-- Map -->
