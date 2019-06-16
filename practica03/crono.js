@@ -3,6 +3,8 @@ login: lgarrido */
 
 'use strict'
 
+let initial_time_partials = 0;
+let ultimo_partial = 0;
 
 function sleep(x) {
 	if (Math.sign(x) == -1) {
@@ -77,6 +79,7 @@ function pausa(x, crono, resultado) {
 		case ("s"):
 			crono.state = 1;
 			crono.initial_time = Date.now();
+			resultado.last_partial = Date.now();
 			break;
 		case ("p"):
 			break;
@@ -97,7 +100,8 @@ function marcha(x, crono, resultado) {
 		case ("p"):
 			crono.state = 1;
 			resultado.display = millisecondsToTime(Date.now() - crono.initial_time);
-			resultado.partials.push(millisecondsToTime(Date.now() - crono.initial_time));
+			resultado.partials.push(millisecondsToTime(Date.now() - resultado.last_partial));
+			resultado.last_partial = Date.now();
 			break;
 		case ("r"):
 			break;
@@ -117,6 +121,7 @@ function newResultado(){
 	let resultado = {};
 	resultado.display = '00:00:00:00';
 	resultado.partials = [];
+	resultado.last_partial = 0;
 	return resultado;
 }
 

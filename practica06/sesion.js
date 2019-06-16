@@ -11,54 +11,47 @@ let options = {
 function success(pos) {
 	let x = pos.coords;
 	let mensajePrimeraVisita;
-	localStorage.setItem('latitud', x.latitude.toFixed(3));
-	localStorage.setItem('longitud', x.longitude.toFixed(3));
-	localStorage.setItem('aprox', x.accuracy);
-	if (!localStorage.getItem('existeUsuario')) {
-		let nombre = localStorage.getItem('nombreUsuario');
-		let latitud = localStorage.getItem('latitud');
-		let longitud = localStorage.getItem('longitud');
-		let aprox = localStorage.getItem('aprox');
-		mensajePrimeraVisita = "Hola " + nombre + ". Esta es tu primera visita. Tus coordenadas son: " + latitud;
-		mensajePrimeraVisita += ", " + longitud + " (más o menos " + aprox + " metros)";
+	let datos = JSON.parse(localStorage.getItem('datos'));
+	datos.latitud = x.latitude.toFixed(3);
+	datos.longitud = x.longitude.toFixed(3);
+	datos.aprox = x.accuracy;
+	datos.fecha = new Date();
+	localStorage.setItem('datos', JSON.stringify(datos));
+	if (!datos.existeUsuario) {
+		mensajePrimeraVisita = "Hola " + datos.nombre + ". Esta es tu primera visita. Tus coordenadas son: " + datos.latitud;
+		mensajePrimeraVisita += ", " + datos.longitud + " (más o menos " + datos.aprox + " metros)";
 		$("#mensajeVisita").text(mensajePrimeraVisita);
-		localStorage.setItem('existeUsuario', true);
+		datos.existeUsuario = true;
+		localStorage.setItem('datos', JSON.stringify(datos));
 	}
 }
 
 function error(err) {
 	console.warn("ERROR(${err.code}): ${err.message}");
-};
+}
 
 function getCoords() {
 	navigator.geolocation.getCurrentPosition(success, error, options);
-	let fechaActual = new Date();
-	localStorage.setItem('fecha', fechaActual);
 }
 
 function register() {
-	let nombreUsuario = localStorage.getItem('nombreUsuario');
-	if (!nombreUsuario) {
+	if (!localStorage.getItem('datos')){
 		let input = prompt("¿Cómo te llamas?");
-		localStorage.setItem('nombreUsuario', input);
+		let datos = {'nombre': input, 'existeUsuario': false}
+		localStorage.setItem('datos', JSON.stringify(datos));
 	}
 }
 
 function otherVisits() {
-	let nombre = localStorage.getItem('nombreUsuario');
-	let latitud = localStorage.getItem('latitud');
-	let longitud = localStorage.getItem('longitud');
-	let aprox = localStorage.getItem('aprox');
-	let fecha = localStorage.getItem('fecha');
+	let datos = JSON.parse(localStorage.getItem('datos'));
 	getCoords();
-	let latitudActual = localStorage.getItem('latitud');
-	let longitudActual = localStorage.getItem('longitud');
-	let mensaje = "Hola " + nombre + ". Tu última visita fue con fecha " + fecha;
-	if ((latitudActual == latitud) && (longitudActual == longitud)) {
-		mensaje += ", desde la misma ubicación que ahora (coordenadas " + latitud;
-		mensaje += ", " + longitud + ", más o menos " + aprox + " metros)";
+	let datos_actuales = JSON.parse(localStorage.getItem('datos'));
+	let mensaje = "Hola " + datos.nombre + ". Tu última visita fue con fecha " + Date(datos.fecha);
+	if((datos.latitud == datos_actuales.latitud) && (datos.longitud == datos_actuales.longitud)) {
+		mensaje += ", desde la misma ubicación que ahora (coordenadas " + datos.latitud;
+		mensaje += ", " + datos.longitud + ", más o menos " + datos.aprox + " metros)";
 	} else {
-		mensaje += ", desde las coordenadas " + latitud + ", " + longitud + " (más o menos " + aprox + " metros)";
+		mensaje += ", desde las coordenadas " + datos.latitud + ", " + datos.longitud + " (más o menos " + datos.aprox + " metros)";
 	}
 	$("#mensajeVisita").text(mensaje);
 }

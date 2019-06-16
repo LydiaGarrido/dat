@@ -18,7 +18,13 @@
 	<script>
 		$(document).ready(function() {
 				register();
-				if (!localStorage.getItem('existeUsuario')) {
+				let datos = JSON.parse(localStorage.getItem('datos'));
+				if (!datos) {
+					let existeUsuario = false;
+				} else {
+					existeUsuario = datos.existeUsuario;
+				}
+				if (!existeUsuario) {
 					getCoords();
 				} else {
 					otherVisits();
