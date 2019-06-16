@@ -3,9 +3,6 @@ login: lgarrido */
 
 'use strict'
 
-let initial_time_partials = 0;
-let ultimo_partial = 0;
-
 function sleep(x) {
 	if (Math.sign(x) == -1) {
 		return console.log("Error: los segundos no pueden ser negativos");
