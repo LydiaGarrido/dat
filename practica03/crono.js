@@ -133,6 +133,7 @@ function testCrono() {
 	let resultado = {
 		display: '00:00:00:00',
 		partials: [],
+		last_partial: 0,
 	}
 
 	//console.log('Tecla incorrecta');

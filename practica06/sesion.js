@@ -46,7 +46,7 @@ function otherVisits() {
 	let datos = JSON.parse(localStorage.getItem('datos'));
 	getCoords();
 	let datos_actuales = JSON.parse(localStorage.getItem('datos'));
-	let mensaje = "Hola " + datos.nombre + ". Tu última visita fue con fecha " + Date(datos.fecha);
+	let mensaje = "Hola " + datos.nombre + ". Tu última visita fue con fecha " + datos.fecha + " UTC";
 	if((datos.latitud == datos_actuales.latitud) && (datos.longitud == datos_actuales.longitud)) {
 		mensaje += ", desde la misma ubicación que ahora (coordenadas " + datos.latitud;
 		mensaje += ", " + datos.longitud + ", más o menos " + datos.aprox + " metros)";
